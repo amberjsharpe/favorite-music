@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Favorite Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <section id="top-flex-container">
+        <form class="top-flex-item">
+            Song:<br>
+            <input type="text" name="favsong"><br>
+            Artist:<br>
+            <input type="text" name="favartist"><br>
+            Album:<br>
+            <input type="text" name="favalbum"><br>
+            <input id="submit-btn" type="submit" value="Submit">
+        </form>
+
+        <section id="button-container" class="top-flex-item">
+            <button class="button">Vertically, Descending Alphabetically</button>
+            <button class="button">Vertically, Ascending Alphabetically</button>
+            <button class="button">Vertically, As Added</button>
+            <button class="button">Verticallly, As Added, Inverted</button>
+            <button class="button">Horizontally, Descending Alphabetically, ','</button>
+            <button class="button">Horizontally, Ascending Alphabetically, '>>'</button>
+            <button class="button">Horizontally, As Added, ':'</button>
+            <button class="button">Horizontally, As Added, Inverted, '|'</button>
+        </section>
+    </section>
+
+    <div class="flex-container">
+        <div class="flex-item" id="fav-songs"><h2>Favorite Songs</h2></div>
+
+        <div class="flex-item" id="fav-artists"><h2>Favorite Artists</h2></div>
+
+        <div class="flex-item" id="fav-albums"><h2>Favorite Albums</h2></div>
+    </div>
+
+<script src="arraymethods.js"></script>    
+</body>
+</html>
