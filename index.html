@@ -10,15 +10,15 @@
 </head>
 <body>
     <section id="top-flex-container">
-        <form class="top-flex-item">
+        <div class="top-flex-item">
             Song:<br>
-            <input type="text" name="favsong"><br>
+            <input id="song-input" type="text"><br>
             Artist:<br>
-            <input type="text" name="favartist"><br>
+            <input id="artist-input" type="text"><br>
             Album:<br>
-            <input type="text" name="favalbum"><br>
+            <input id="album-input" type="text"><br>
             <input id="submit-btn" type="submit" value="Submit">
-        </form>
+        </div>
 
         <section id="button-container" class="top-flex-item">
             <button class="button">Vertically, Descending Alphabetically</button>
@@ -33,11 +33,18 @@
     </section>
 
     <div class="flex-container">
-        <div class="flex-item" id="fav-songs"><h2>Favorite Songs</h2></div>
-
-        <div class="flex-item" id="fav-artists"><h2>Favorite Artists</h2></div>
-
-        <div class="flex-item" id="fav-albums"><h2>Favorite Albums</h2></div>
+        <div class="div-container">
+            <h2 class="div-item">Favorite Songs</h2>
+            <div class="flex-item" id="fav-songs"></div>
+        </div>
+        <div class="div-container">
+            <h2 class="div-item">Favorite Artists</h2>
+            <div class="flex-item" id="fav-artists"></div>
+        </div>
+        <div class="div-container">
+            <h2>Favorite Albums</h2>
+            <div class="flex-item" id="fav-albums"></div>
+        </div>
     </div>
 
 <script src="arraymethods.js"></script>    

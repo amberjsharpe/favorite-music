@@ -19,6 +19,14 @@ h2 {
     padding: 20px;
 }
 
+.div-item {
+    padding: 0 25px 0 25px;
+}
+
+#fav-songs, #fav-artists, #fav-albums {
+    padding-top: 0;
+}
+
 form {
     padding-left: 25px;
 }
@@ -42,20 +50,15 @@ input {
     display: flex;
 }
 
-.button {
+.button, #submit-btn {
     border-top: 1px solid black;
-    background: #03FCBA;
     padding: 18.5px 37px;
-    -webkit-border-radius: 16px;
-    -moz-border-radius: 16px;
     border-radius: 16px;
-    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
     box-shadow: rgba(0,0,0,1) 0 1px 0;
     text-shadow: rgba(0,0,0,.4) 0 1px 0;
     color: #F92A82;
     font-size: 12px;
-    font-family: Helvetica, Arial, Sans-Serif;
+    font-family:  Arial, Helvetica, sans-serif;
     text-decoration: none;
     vertical-align: middle;
     height: 10px;
