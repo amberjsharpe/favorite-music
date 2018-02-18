@@ -41,7 +41,7 @@ function addNew() {
     // Add to arrays
     songs.unshift(songInput.value);
     console.log(songs);
-    artists.unshift(artistInput.value);
+    artists.push(artistInput.value);
     console.log(artists);
     albums.unshift(albumInput.value);
     console.log(albums);
