@@ -12,37 +12,53 @@
     <section id="top-flex-container">
         <div class="top-flex-item">
             Song:<br>
-            <input id="song-input" type="text"><br>
+            <input class="form-input" id="song-input" type="text"><br>
             Artist:<br>
-            <input id="artist-input" type="text"><br>
+            <input class="form-input" id="artist-input" type="text"><br>
             Album:<br>
-            <input id="album-input" type="text"><br>
+            <input class="form-input" id="album-input" type="text"><br>
             <input id="submit-btn" type="submit" value="Submit">
         </div>
 
         <section id="button-container" class="top-flex-item">
-            <button class="button">Vertically, Descending Alphabetically</button>
-            <button class="button">Vertically, Ascending Alphabetically</button>
-            <button class="button">Vertically, As Added</button>
-            <button class="button">Verticallly, As Added, Inverted</button>
-            <button class="button">Horizontally, Descending Alphabetically, ','</button>
-            <button class="button">Horizontally, Ascending Alphabetically, '>>'</button>
-            <button class="button">Horizontally, As Added, ':'</button>
-            <button class="button">Horizontally, As Added, Inverted, '|'</button>
+            <label class="radio-btn">
+                <input type="radio" id="button-1" name="radio"></input>Vertically, Descending Alphabetically
+            </label>
+            <label class="radio-btn">    
+                <input type="radio" id="button-2" name="radio"></input>Vertically, Ascending Alphabetically
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-3" name="radio"></input>Vertically, As Added
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-4" name="radio"></input>Verticallly, As Added, Inverted
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-5" name="radio"></input>Horizontally, Descending Alphabetically, ','
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-6" name="radio"></input>Horizontally, Ascending Alphabetically, '>>'
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-7" name="radio"></input>Horizontally, As Added, ':'
+            </label>
+            <label class="radio-btn">
+                <input type="radio" id="button-8" name="radio"></input>Horizontally, As Added, Inverted, '|'
+            </label>
         </section>
     </section>
 
     <div class="flex-container">
-        <div class="div-container">
-            <h2 class="div-item">Favorite Songs</h2>
+        <div class="item-container">
+            <h2 class ="flex-item" class="div-item">Favorite Songs:</h2>
             <div class="flex-item" id="fav-songs"></div>
         </div>
-        <div class="div-container">
-            <h2 class="div-item">Favorite Artists</h2>
+        <div class="item-container">
+            <h2 class="flex-item" class="div-item">Favorite Artists:</h2>
             <div class="flex-item" id="fav-artists"></div>
         </div>
-        <div class="div-container">
-            <h2>Favorite Albums</h2>
+        <div class="item-container">
+            <h2 class="flex-item" class="div-item">Favorite Albums:</h2>
             <div class="flex-item" id="fav-albums"></div>
         </div>
     </div>
