@@ -13,6 +13,7 @@ function displaySongArray() {
 }
 displaySongArray(); //Call function
 
+
 var displayArtists = document.getElementById("fav-artists");
 function displayArtistArray() {
 artists.forEach(function(artist) {
@@ -52,8 +53,30 @@ function refreshAlbumDisplay() {
     displayAlbumArray();
 }
 
-// Songs as added
-var songsAsAdded = [];
+// Display as added 
+let displaySongsAsAdded = () => {
+    displaySongs.innerHTML = "";
+    songsAsAdded.forEach(function(song) {
+        displaySongs.innerHTML += `<h4>${song}</h4>`;
+    });    
+}
+let displayArtistsAsAdded = () => {
+    displayArtists.innerHTML = "";
+    artistsAsAdded.forEach(function(artist){
+        displayArtists.innerHTML += `<h4>${artist}</h4>`;
+    });
+}
+
+let displayAlbumsAsAdded = () => {
+    displayAlbums.innerHTML = "";
+    albumsAsAdded.forEach(function(album){
+        displayAlbums.innerHTML += `<h4>${album}</h4>`;
+    });
+}
+// Arrays as added
+let songsAsAdded = [];
+let artistsAsAdded = [];
+let albumsAsAdded = [];
 
 // On Submit click, add input text to arrays
 function addNew() {
@@ -62,20 +85,26 @@ function addNew() {
     artists.unshift(artistInput.value);
     albums.push(albumInput.value);
 
+    // Copy to a different array
+    for (var i = 0; i < songs.length; i++) {
+        songsAsAdded[i] = songs[i]; 
+    }
+    for (var j = 0; j < artists.length; j++) {
+        artistsAsAdded[j] = artists[j];
+    }
+    for (var k = 0; k < albums.length; k++) {
+        albumsAsAdded[k] = albums[k];
+    }
+
     // Refresh div
     refreshSongDisplay();
     refreshArtistDisplay();
     refreshAlbumDisplay();
-
     // Reset Input field
     songInput.value = "";
     artistInput.value = "";
     albumInput.value = "";
-
-    // Copy array into other array
-    songsAsAdded = songs.slice();
 }
-
 submitBtn.addEventListener("click", addNew);
 // Button Functionality
 var button1 = document.getElementById("button-1");
@@ -88,9 +117,13 @@ var button7 = document.getElementById("button-7");
 var button8 = document.getElementById("button-8");
 
 // Output vertically descending alphabetically
-function vertDescAlpha() {
+function vertDescAlpha(array) {
     songs.sort().reverse();
     refreshSongDisplay();
+    artists.sort().reverse();
+    refreshArtistDisplay();
+    albums.sort().reverse();
+    refreshAlbumDisplay();
 }
 button1.addEventListener("click", vertDescAlpha);
 
@@ -98,26 +131,29 @@ button1.addEventListener("click", vertDescAlpha);
 function vertAscAlpha() {
     songs.sort();
     refreshSongDisplay();
+    artists.sort();
+    refreshArtistDisplay();
+    albums.sort();
+    refreshAlbumDisplay();
 }
 button2.addEventListener("click", vertAscAlpha);
 
 // Output vertically exactly as the data was added
 function vertAsAdded() {
-    displaySongs.innerHTML = "";
-    songsAsAdded = songs.slice();
-    songsAsAdded.forEach(function(song) {
-        displaySongs.innerHTML += `<h4>${song}</h4>`;
-    }); 
+    displaySongsAsAdded();
+    displayArtistsAsAdded();
+    displayAlbumsAsAdded();
 }
 button3.addEventListener("click", vertAsAdded);
 
 // Output vertically exactly as the data was added, inverted
 function vertAsAddedInvert() {
-    displaySongs.innerHTML = "";
-    songsAsAdded = songs.slice();
-    songsAsAdded.reverse().forEach(function(song) {
-        displaySongs.innerHTML += `<h4>${song}</h4>`;
-    }); 
+    songsAsAdded.reverse();
+    displaySongsAsAdded();
+    artistsAsAdded.reverse();
+    displayArtistsAsAdded();
+    albumsAsAdded.reverse();
+    displayAlbumsAsAdded();
 }
 button4.addEventListener("click", vertAsAddedInvert);
 
@@ -141,9 +177,9 @@ button6.addEventListener("click", arrowJoin);
 
 // Output horizontally exactly as the data was added, separated by ":"
 function asAddedColon() {
-    displaySongs.innerHTML = songs.join(": ");
-    displayArtists.innerHTML = artists.join(": ");
-    displayAlbums.innerHTML = albums.join(": ");    
+    displaySongs.innerHTML = songsAsAdded.join(": ");
+    displayArtists.innerHTML = artistsAsAdded.join(": ");
+    displayAlbums.innerHTML = albumsAsAdded.join(": ");    
 }
 
 button7.addEventListener("click", asAddedColon);
@@ -151,9 +187,9 @@ button7.addEventListener("click", asAddedColon);
 // Horizontally, As Added, Inverted, '|'/
 
 function asAddedInvertLine() {
-    displaySongs.innerHTML = songs.join("| ");
-    displayArtists.innerHTML = artists.join("| ");
-    displayAlbums.innerHTML = albums.join("| ");   
+    displaySongs.innerHTML = songsAsAdded.join("| ");
+    displayArtists.innerHTML = artistsAsAdded.join("| ");
+    displayAlbums.innerHTML = albumsAsAdded.join("| ");   
 }
 
 button8.addEventListener("click", asAddedInvertLine);
